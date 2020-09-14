@@ -33,7 +33,7 @@ public class NegotiationProcess {
 
     private static Boolean isTaskCountLessThanThree(AccountToTask accountToTask) {
         Id accountId = accountToTask.accountId;
-        if ([SELECT COUNT() FROM Task WHERE WhatId = :accountId] > 3) {
+        if ([SELECT COUNT() FROM Task WHERE WhatId = :accountId] >= 3) {
             return false;
         } else {
             return true;
